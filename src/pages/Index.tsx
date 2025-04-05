@@ -1,9 +1,35 @@
-import RenderParticle from "../Components/WeatherParticles/RenderParticle";
+import React from "react";
+import { WeatherProvider } from "@/context/WeatherContext";
+import WeatherBackground from "@/Components/WeatherBackground";
 
-export const Index = () => {
+const Index: React.FC = () => {
   return (
-    <div>
-      <RenderParticle />
-    </div>
+    <WeatherProvider>
+      <div className="min-h-screen relative overflow-x-hidden">
+        <WeatherBackground />
+
+        <div className="container z-50 mx-auto px-4 py-8">
+          <header className="mb-8">
+            <h1 className="text-4xl font-bold text-center text-white mb-2 animate-fade-in">
+              Погодный сервис
+            </h1>
+            <p
+              className="text-center text-white/80 animate-fade-in"
+              style={{ animationDelay: "0.2s" }}
+            >
+              Актуальная информация о погоде по всему миру
+            </p>
+          </header>
+
+          <div className="space-y-6 max-w-4xl mx-auto"></div>
+
+          <footer className="mt-12 text-center text-white/60 text-sm">
+            <p>Данные предоставлены OpenWeatherMap API</p>
+          </footer>
+        </div>
+      </div>
+    </WeatherProvider>
   );
 };
+
+export default Index;
