@@ -11,13 +11,14 @@ const RainParticles: React.FC<RainParticlesProps> = ({ count = 100 }) => {
     const delay = Math.random() * 2;
     const left = `${Math.random() * 100}%`;
     const duration = 0.5 + Math.random() * 0.5;
-
+    const size = 8 + Math.random() * 7;
     particles.push(
       <div
         key={`rain-${i}`}
         className="rain-drop"
         style={{
           left,
+          height: `${size}px`,
           top: `-20px`,
           animationDelay: `${delay}s`,
           animationDuration: `${duration}s`,
