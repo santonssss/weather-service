@@ -1,3 +1,54 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+@keyframes clouds-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
 @keyframes leaf-fall {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -12,4 +63,145 @@
 .leaf {
   position: absolute;
   will-change: transform, opacity;
+  animation: leaf-fall 5s linear infinite;
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.rain-drop {
+  position: absolute;
+  width: 2px;
+  height: 15px;
+  background: linear-gradient(
+    to bottom,
+    rgba(173, 216, 230, 0.8),
+    rgba(173, 216, 230, 0)
+  );
+  filter: blur(0.5px);
+  animation: rain-fall 1s linear infinite;
+}
+
+@keyframes snow {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(10px);
+  }
+  100% {
+    transform: translateY(100vh) translateX(-10px);
+    opacity: 0;
+  }
+}
+
+.snow-particle {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  animation: snow 5s linear infinite;
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(15px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(100vh) translateX(-15px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes spring-rain {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.petal {
+  position: absolute;
+  background-color: #ffafcc;
+  border-radius: 100% 0% 100% 0% / 100% 0% 100% 0%;
+  will-change: transform, opacity;
+  animation: petal-fall 6s linear infinite;
+}
+
+.spring-rain-drop {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background-color: rgba(173, 216, 230, 0.7);
+  filter: blur(0.5px);
+  animation: spring-rain 1.5s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.sunbeam {
+  position: absolute;
+  will-change: transform, opacity;
+  box-shadow: 0 0 10px rgba(255, 255, 190, 0.8);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes winter-snow {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(10px) scale(1);
+  }
+  100% {
+    transform: translateY(100vh) translateX(-10px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.winter-snow {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  will-change: transform, opacity;
+  animation: winter-snow 10s linear infinite;
 }
